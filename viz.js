@@ -80,7 +80,7 @@ svg.selectAll("mybar")
   .append("rect")
     .attr("x", function(d) { return x(d.state); })
     .attr("width", x.bandwidth())
-    .attr("fill", "#FFC875")
+    .attr("fill", "#156b8a")
     // no bar at the beginning thus:
     .attr("height", function(d) { return height - y(0); }) // always equal to 0
     .attr("y", function(d) { return y(0); })
