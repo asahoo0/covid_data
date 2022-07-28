@@ -1,4 +1,4 @@
-,id,Population,State,Doses Administered,People Vaccinated,Completed Vaccination,Completed One Dose Vaccination,CDC Doses Distributed,Percentage Vaccinated
+,id,Population,State,DosesAdministered,PeopleVaccinated,CompletedVaccination,CompletedOneDoseVaccination,CDCDosesDistributed,PercentageVaccinated
 0,AL,4903185,Alabama,3141802,1822146,1508504,108475,4692070,11.182996358489431
 1,AK,731545,Alaska,634868,347501,301947,21515,822845,9.593804892385293
 2,AZ,7278717,Arizona,6237009,3495529,2775927,196296,7951295,12.200020965233296
