@@ -18,7 +18,7 @@ var tooltip = d3.select("#my_dataviz")
 
  var mouseover = function(d) {
     var formatDecimal = d3.format(",.3f");
-    var stateName = d.state;
+    var stateName = d.State;
     var percentageVaccinated = formatDecimal(d.PercentageVaccinated);
     var rank = d.Rank;
     tooltip
