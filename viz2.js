@@ -94,7 +94,7 @@ svg.selectAll("rect")
   .transition()
   .duration(800)
   .attr("y", function(d) { return y(d.cases); })
-  .attr("height", function(d) { return height - y(d.cases); })
+  .attr("height", function(d) { return height - y(d.cases/10000); })
   .delay(function(d,i){console.log(i) ; return(i*100)})
 
 })
