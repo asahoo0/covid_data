@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 90, left: 40},
+var margin = {top: 10, right: 40, bottom: 90, left: 60},
     width = 1500 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
@@ -18,13 +18,13 @@ var tooltip = d3.select("#my_dataviz")
 
  var mouseover = function(d) {
     var formatDecimal = d3.format(",.3f");
-    var stateName = d.State;
-    var percentageVaccinated = formatDecimal(d.PercentageVaccinated);
+    var stateName = d.state;
+    var cases = d.cases;
     var rank = d.Rank;
     tooltip
         .html("State: " + stateName
         + "<br>" + "Vaccination Rank: " + rank
-        + "<br>" + "Percentage Vaccinated: " + percentageVaccinated + "%"
+        + "<br>" + "Cases: " + cases
         )
         .style("opacity", 1)
   }
@@ -48,10 +48,10 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Parse the Data
-d3.csv("https://raw.githubusercontent.com/asahoo-4/data_vis/main/joined.csv", function(data) {
+d3.csv("https://raw.githubusercontent.com/asahoo-4/data_vis/17c4bdb6505faf7b884f7fcb30c675adfcbe9ad5/us-states-overall.csv", function(data) {
 
     data.sort(function(b, a) {
-        return a.PercentageVaccinated - b.PercentageVaccinated;
+        return a.cases - b.cases;
       });
 
 // X axis
@@ -68,7 +68,7 @@ svg.append("g")
 
 // Add Y axis
 var y = d3.scaleLinear()
-  .domain([0, 70])
+  .domain([0, 5000000])
   .range([ height, 0]);
 svg.append("g")
   .call(d3.axisLeft(y));
@@ -93,8 +93,8 @@ svg.selectAll("mybar")
 svg.selectAll("rect")
   .transition()
   .duration(800)
-  .attr("y", function(d) { return y(d.PercentageVaccinated); })
-  .attr("height", function(d) { return height - y(d.PercentageVaccinated); })
+  .attr("y", function(d) { return y(d.cases); })
+  .attr("height", function(d) { return height - y(d.cases); })
   .delay(function(d,i){console.log(i) ; return(i*100)})
 
 })
