@@ -19,7 +19,7 @@ var tooltip = d3.select("#my_dataviz")
  var mouseover = function(d) {
     var formatDecimal = d3.format(",.3f");
     var stateName = d.state;
-    var casePercent = formatDecimal(d.casePercent);
+    var casePercent = formatDecimal(d.casesPercent);
     var rank = d.Rank;
     tooltip
         .html("State: " + stateName
@@ -51,7 +51,7 @@ var svg = d3.select("#my_dataviz")
 d3.csv("https://raw.githubusercontent.com/asahoo-4/data_vis/main/joined.csv", function(data) {
 
     data.sort(function(b, a) {
-        return a.casePercent - b.casePercent;
+        return a.casesPercent - b.casesPercent;
       });
 
 // X axis
@@ -93,8 +93,8 @@ svg.selectAll("mybar")
 svg.selectAll("rect")
   .transition()
   .duration(800)
-  .attr("y", function(d) { return y(d.casePercent); })
-  .attr("height", function(d) { return height - y(d.casePercent); })
+  .attr("y", function(d) { return y(d.casesPercent); })
+  .attr("height", function(d) { return height - y(d.casesPercent); })
   .delay(function(d,i){console.log(i) ; return(i*100)})
 
 })
