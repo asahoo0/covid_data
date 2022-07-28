@@ -68,7 +68,7 @@ svg.append("g")
 
 // Add Y axis
 var y = d3.scaleLinear()
-  .domain([0, 70])
+  .domain([0, 500000])
   .range([ height, 0]);
 svg.append("g")
   .call(d3.axisLeft(y));
@@ -94,7 +94,7 @@ svg.selectAll("rect")
   .transition()
   .duration(800)
   .attr("y", function(d) { return y(d.cases); })
-  .attr("height", function(d) { return height - y(d.cases/10000); })
+  .attr("height", function(d) { return height - y(d.cases); })
   .delay(function(d,i){console.log(i) ; return(i*100)})
 
 })
