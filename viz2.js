@@ -20,11 +20,9 @@ var tooltip = d3.select("#my_dataviz")
     var formatDecimal = d3.format(",.3f");
     var stateName = d.State;
     var Cases = formatDecimal(d.Cases);
-    var CVACLevelOfConcern = d.CVACLevelOfConcern;
     tooltip
         .html("State: " + stateName
-        + "<br>" + "Cases: " + Cases + "%"
-        + "<br>" + "CVAC Level Of Concern: " + CVACLevelOfConcern
+        + "<br>" + "Cases: " + Cases
         )
         .style("opacity", 1)
   }
