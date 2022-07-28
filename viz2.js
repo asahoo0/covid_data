@@ -24,7 +24,7 @@ var tooltip = d3.select("#my_dataviz")
     tooltip
         .html("State: " + stateName
         + "<br>" + "Vaccination Rank: " + rank
-        + "<br>" + "Percentage Vaccinated: " + cases
+        + "<br>" + "Cases: " + cases
         )
         .style("opacity", 1)
   }
