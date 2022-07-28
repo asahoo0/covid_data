@@ -1,4 +1,4 @@
-date,state,fips,cases,deaths,confirmed_cases,confirmed_deaths,probable_cases,probable_deaths,mortality_rate_confirmed,PercentageVaccinated,Rank
+date,State,fips,cases,deaths,confirmed_cases,confirmed_deaths,probable_cases,probable_deaths,mortality_rate_confirmed,PercentageVaccinated,Rank
 6/17/21,Alabama,1,548323,11288,421782,8963,126541,2325,0.020586406,30.76579815,49
 6/17/21,Alaska,2,70183,356,0,356,70183,0,0.005072453,41.27524623,28
 6/17/21,Arizona,4,888005,17791,,,,,0.020034797,38.13758661,34
