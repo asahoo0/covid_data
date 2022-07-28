@@ -1,6 +1,6 @@
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 90, left: 40},
-    width = 1600 - margin.left - margin.right,
+    width = 1500 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
 var tooltip = d3.select("#my_dataviz")
@@ -18,11 +18,13 @@ var tooltip = d3.select("#my_dataviz")
 
  var mouseover = function(d) {
     var formatDecimal = d3.format(",.3f");
-    var stateName = d.State;
-    var Cases = formatDecimal(d.Cases);
+    var stateName = d.state;
+    var cases = d.cases;
+    var rank = d.Rank;
     tooltip
         .html("State: " + stateName
-        + "<br>" + "Cases: " + Cases
+        + "<br>" + "Vaccination Rank: " + rank
+        + "<br>" + "Percentage Vaccinated: " + cases
         )
         .style("opacity", 1)
   }
@@ -49,13 +51,13 @@ var svg = d3.select("#my_dataviz")
 d3.csv("https://raw.githubusercontent.com/asahoo-4/data_vis/17c4bdb6505faf7b884f7fcb30c675adfcbe9ad5/us-states-overall.csv", function(data) {
 
     data.sort(function(b, a) {
-        return a.Cases - b.Cases;
+        return a.cases - b.cases;
       });
 
 // X axis
 var x = d3.scaleBand()
   .range([ 0, width ])
-  .domain(data.map(function(d) { return d.State; }))
+  .domain(data.map(function(d) { return d.state; }))
   .padding(0.2);
 svg.append("g")
   .attr("transform", "translate(0," + height + ")")
@@ -66,7 +68,7 @@ svg.append("g")
 
 // Add Y axis
 var y = d3.scaleLinear()
-  .domain([0, 35])
+  .domain([0, 70])
   .range([ height, 0]);
 svg.append("g")
   .call(d3.axisLeft(y));
@@ -76,9 +78,9 @@ svg.selectAll("mybar")
   .data(data)
   .enter()
   .append("rect")
-    .attr("x", function(d) { return x(d.State); })
+    .attr("x", function(d) { return x(d.state); })
     .attr("width", x.bandwidth())
-    .attr("fill", "#d93927")
+    .attr("fill", "#156b8a")
     // no bar at the beginning thus:
     .attr("height", function(d) { return height - y(0); }) // always equal to 0
     .attr("y", function(d) { return y(0); })
@@ -91,8 +93,8 @@ svg.selectAll("mybar")
 svg.selectAll("rect")
   .transition()
   .duration(800)
-  .attr("y", function(d) { return y(d.Cases); })
-  .attr("height", function(d) { return height - y(d.Cases); })
+  .attr("y", function(d) { return y(d.cases); })
+  .attr("height", function(d) { return height - y(d.cases); })
   .delay(function(d,i){console.log(i) ; return(i*100)})
 
 })
