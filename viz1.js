@@ -48,7 +48,7 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Parse the Data
-d3.csv("https://raw.githubusercontent.com/madhusivaraj/data-visualization/main/Narrative%20Visualization/data/VaccinationData.csv?token=AJ4IWWYCVLWBFZO34EKUX4TBBXDLQ", function(data) {
+d3.csv("https://raw.githubusercontent.com/asahoo-4/data_vis/17c4bdb6505faf7b884f7fcb30c675adfcbe9ad5/us-states-overall.csv", function(data) {
 
     data.sort(function(b, a) {
         return a.EstimatedHesitant - b.EstimatedHesitant;
