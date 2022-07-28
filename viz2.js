@@ -20,11 +20,13 @@ var tooltip = d3.select("#my_dataviz")
     var formatDecimal = d3.format(",.3f");
     var stateName = d.state;
     var cases = d.cases;
+    var pop = d.Population;
     var rank = d.Rank;
     tooltip
         .html("State: " + stateName
         + "<br>" + "Vaccination Rank: " + rank
         + "<br>" + "Cases: " + cases
+        + "<br>" + "Population: " + pop
         )
         .style("opacity", 1)
   }
@@ -51,7 +53,7 @@ var svg = d3.select("#my_dataviz")
 d3.csv("https://raw.githubusercontent.com/asahoo-4/data_vis/main/joined.csv", function(data) {
 
     data.sort(function(b, a) {
-        return a.cases - b.cases;
+        return (a.cases/a.Population) - (b.cases/b.Population);
       });
 
 // X axis
@@ -93,8 +95,8 @@ svg.selectAll("mybar")
 svg.selectAll("rect")
   .transition()
   .duration(800)
-  .attr("y", function(d) { return y(d.cases); })
-  .attr("height", function(d) { return height - y(d.cases); })
+  .attr("y", function(d) { return y(d.cases/d.Population); })
+  .attr("height", function(d) { return height - y(d.cases/d.Population); })
   .delay(function(d,i){console.log(i) ; return(i*100)})
 
 })
