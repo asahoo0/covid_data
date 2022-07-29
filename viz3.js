@@ -91,7 +91,7 @@ svg.selectAll("mybar")
 svg.selectAll("rect")
   .transition()
   .duration(800)
-  .attr("y", function(d) { return y(d.EstimatedHesitant); })
+  .attr("y", function(d) { return y(d.Population); })
   .attr("height", function(d) { return height - y(d.Population); })
   .delay(function(d,i){console.log(i) ; return(i*100)})
 
