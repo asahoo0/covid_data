@@ -76,7 +76,7 @@ var gY = svg.append("g")
     .text("Percentage Vaccinated");
 var gX = svg.append("g")
     .attr('class', 'axis')
-    .attr("transform","translate(300,570)")
+    .attr("transform","translate(300,700)")
     .call(x)
     .append("text")
     .attr("fill", "black")//set the fill here
