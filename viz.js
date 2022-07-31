@@ -69,8 +69,8 @@ svg.append("g")
 svg.append("text")
     .attr("class", "x label")
     .attr("text-anchor", "end")
-    .attr("x", width)
-    .attr("y", height - 6)
+    .attr("x", width - 50)
+    .attr("y", height - 25)
     .text("income per capita, inflation-adjusted (dollars)");
 
 // Add Y axis
@@ -83,7 +83,7 @@ svg.append("g")
 svg.append("text")
     .attr("class", "y label")
     .attr("text-anchor", "end")
-    .attr("y", 6)
+    .attr("y", 25)
     .attr("dy", ".75em")
     .attr("transform", "rotate(-90)")
     .text("life expectancy (years)");
