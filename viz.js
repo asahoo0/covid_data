@@ -68,7 +68,7 @@ svg.append("g")
     
 var gX = svg.append("g")
     .attr('class', 'axis')
-    .attr("transform","translate(-20,300)")
+    .attr("transform","translate(20,300)")
     .call(x)
     .append("text")
     .attr("fill", "black")//set the fill here
