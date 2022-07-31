@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 90, left: 200},
+var margin = {top: 10, right: 30, bottom: 90, left: 50},
     width = 1500 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
@@ -41,7 +41,7 @@ var tooltip = d3.select("#my_dataviz")
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
+    .attr("width", width + margin.left + margin.right+100)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform",
