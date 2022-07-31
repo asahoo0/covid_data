@@ -75,7 +75,7 @@ var gY = svg.append("g")
     .text("Vaccine-Hesitant Population Percentage");
 var gX = svg.append("g")
     .attr('class', 'axis')
-    .attr("transform","translate(300,570)")
+    .attr("transform","translate(300,700)")
     .call(x)
     .append("text")
     .attr("fill", "black")//set the fill here
