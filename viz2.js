@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 40, bottom: 90, left: 60},
+var margin = {top: 10, right: 40, bottom: 90, left: 80},
     width = 1500 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
@@ -67,7 +67,7 @@ svg.append("g")
     .style("text-anchor", "end");
 var gY = svg.append("g")
     .attr('class', 'axis')
-    .attr("transform","translate(20,300)")
+    .attr("transform","translate(-10,300)")
     .call(x)
     .append("text")
     .attr("fill", "black")//set the fill here
@@ -75,7 +75,7 @@ var gY = svg.append("g")
     .text("Cases");
 var gX = svg.append("g")
     .attr('class', 'axis')
-    .attr("transform","translate(700,570)")
+    .attr("transform","translate(720,570)")
     .call(x)
     .append("text")
     .attr("fill", "black")//set the fill here
