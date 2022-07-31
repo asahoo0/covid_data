@@ -72,7 +72,7 @@ var gX = svg.append("g")
     .call(x)
     .append("text")
     .attr("fill", "black")//set the fill here
-    .attr("transform","translate(-10,0)rotate(-45)")
+    .attr("transform","translate(-10,0)rotate(-90)")
     .text("Hello World!!!");
 
 // Add Y axis
