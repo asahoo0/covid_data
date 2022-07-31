@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 90, left: 40},
+var margin = {top: 10, right: 30, bottom: 90, left: 200},
     width = 1500 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
@@ -69,7 +69,7 @@ svg.append("g")
 svg.append("text")
     .attr("class", "x label")
     .attr("text-anchor", "end")
-    .attr("x", 1600)
+    .attr("x", 1500)
     .attr("y", height - 25)
     .text("income per capita, inflation-adjusted (dollars)");
 
