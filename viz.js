@@ -69,7 +69,7 @@ svg.append("g")
 svg.append("text")
     .attr("class", "x label")
     .attr("text-anchor", "end")
-    .attr("x", width + 50)
+    .attr("x", width -100)
     .attr("y", height - 25)
     .text("income per capita, inflation-adjusted (dollars)");
 
