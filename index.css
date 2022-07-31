@@ -4,11 +4,11 @@ body {
     background-color: whitesmoke;
 }
 
-.pagination {
+.annot {
     display: inline-block;
 }
   
-.pagination a {
+.annot a {
     color: black;
     float: left;
     padding: 5px 12px;
@@ -17,10 +17,10 @@ body {
     border: 1px solid #ddd;
 }
   
-.pagination a.active {
+.annot a.active {
     background-color: #525252;
     color: white;
     border: 1px solid #525252;
 }
 
-.pagination a:hover:not(.active) {background-color: #cccccc;}
+.annot a:hover:not(.active) {background-color: #cccccc;}
