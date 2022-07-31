@@ -66,7 +66,7 @@ svg.append("g")
     .attr("transform", "translate(-10,0)rotate(-45)")
     .style("text-anchor", "end");
     
-var gX = svg.append("g")
+var gY = svg.append("g")
     .attr('class', 'axis')
     .attr("transform","translate(20,300)")
     .call(x)
@@ -74,6 +74,15 @@ var gX = svg.append("g")
     .attr("fill", "black")//set the fill here
     .attr("transform","translate(-50,0)rotate(-90)")
     .text("Percentage Vaccinated");
+var gX = svg.append("g")
+    .attr('class', 'axis')
+    .attr("transform","translate(20,300)")
+    .call(x)
+    .append("text")
+    .attr("fill", "black")//set the fill here
+    .attr("transform","translate(-50,0)")
+    .text("Percentage Vaccinated");
+
 
 // Add Y axis
 var y = d3.scaleLinear()
