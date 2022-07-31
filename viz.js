@@ -41,11 +41,11 @@ var tooltip = d3.select("#my_dataviz")
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
   .append("svg")
-    .attr("width", width + margin.left + margin.right+100)
+    .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+          "translate(" + margin.left + 100"," + margin.top + ")");
 
 // Parse the Data
 d3.csv("https://raw.githubusercontent.com/asahoo-4/data_vis/17c4bdb6505faf7b884f7fcb30c675adfcbe9ad5/us-states-overall.csv", function(data) {
