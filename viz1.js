@@ -67,7 +67,7 @@ svg.append("g")
     .style("text-anchor", "end");
 var gY = svg.append("g")
     .attr('class', 'axis')
-    .attr("transform","translate(20,300)")
+    .attr("transform","translate(25,400)")
     .call(x)
     .append("text")
     .attr("fill", "black")//set the fill here
